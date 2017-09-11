@@ -1,0 +1,26 @@
+//
+//  EigenMatrix_cpp
+//  EigenCBindings
+//
+//  Created by Kevin Quennesson on 8/20/17.
+//
+
+static inline Matrix<Eigen_type, Dynamic, Dynamic>& cast(EigenTypeMatrixRef matrix) {
+  return *static_cast<Matrix<Eigen_type, Dynamic, Dynamic>*>(matrix);
+}
+
+EigenTypeMatrixRef EigenTypeMatrix(Create)() {
+  return new Matrix<Eigen_type, Dynamic, Dynamic>;
+}
+
+void EigenTypeMatrix(Free)(EigenTypeMatrixRef matrix) {
+  delete &cast(matrix);
+}
+
+void EigenTypeMatrix(Zero)(EigenTypeMatrixRef matrix) {
+  cast(matrix).setZero();
+}
+
+void EigenTypeMatrix(SetSize)(EigenTypeMatrixRef matrix) {
+//cast(matrix).();
+}

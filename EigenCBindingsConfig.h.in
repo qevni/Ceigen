@@ -1,0 +1,4 @@
+#define EigenCBindings_VERSION_MAJOR @EigenCBindings_VERSION_MAJOR@
+#define EigenCBindings_VERSION_MINOR @EigenCBindings_VERSION_MINOR@
+
+#include <inttypes.h>

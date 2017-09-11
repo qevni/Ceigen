@@ -1,0 +1,21 @@
+//
+//  EigenMatrix_h
+//  EigenCBindings
+//
+//  Created by Kevin Quennesson on 8/20/17.
+//
+
+#if !defined(TYPE) || !defined(Eigen_type)
+#error "Please do not include this file directly"
+#endif
+
+#include "EigenCBindingsConfig.h"
+#include "Macros.h"
+
+typedef void* EigenTypeMatrixRef;
+
+EigenTypeMatrixRef EigenTypeMatrix(Create)();
+void EigenTypeMatrix(Free)(EigenTypeMatrixRef matrix);
+void EigenTypeMatrix(Zero)(EigenTypeMatrixRef matrix);
+void EigenTypeMatrix(Resize)(EigenTypeMatrixRef matrix, size_t rows, size_t cols);
+Eigen_type EigenTypeMatrix(Get)(EigenTypeMatrixRef matrix, size_t row, size_t col);
